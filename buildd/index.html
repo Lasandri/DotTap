@@ -25,12 +25,18 @@
     </div>
     <script>
 
-    function updateURLParameter(param, value) {
+      function updateURLParameter(param, value) {
           const url = new URL(window.location.href);
+         
+          url.searchParams.set('userId', '');
+          url.searchParams.set('gameId', '');
+           //url.searchParams.set('m', '0');
+          // url.searchParams.set('s', '0');
+           //url.searchParams.set('v', '0');
           url.searchParams.set(param, value);
           window.history.replaceState({}, '', url);
       }
-
+      
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
